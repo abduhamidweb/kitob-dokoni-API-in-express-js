@@ -2,6 +2,8 @@ import express from "express";
 import userRoute from "./router/users.routes.js";
 import adminRouter from "./router/admin.routes.js";
 const app = express();
+app.use(express.json());
+app.use(express.text());
 app.use("/", userRoute);
 app.use("/user", userRoute);
 app.use("/admin", adminRouter);
